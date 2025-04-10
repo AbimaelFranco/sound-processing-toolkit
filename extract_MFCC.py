@@ -25,4 +25,10 @@ print("Spectral Contrast shape:", spectral_contrast.shape)
 print("Zero Crossings shape:", zero_crossings.shape)
 print("RMS shape:", rms.shape)
 
-
+# Si quieres guardar las características en un archivo numpy
+np.savez(os.path.join(output_dir, 'audio_features.npz'),
+         mfccs=mfccs,
+         chroma=chroma,
+         spectral_contrast=spectral_contrast,
+         zero_crossings=zero_crossings,
+         rms=rms)
